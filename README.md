@@ -9,7 +9,7 @@ El siguiente código emplea el paquete `glmulti` para seleccionar los 3 mejores m
 - Los gráficos de las probabilidades relativas de los 3 mejores modelos utilizando el comando `plot_model`del paquete `sjPlot`
 - Los gráficos de los efectos marginales de los 3 mejores modelos
 
-Se incluye un script que contiene dos funciones:
+Se incluye un script que contiene dos funciones (aún por documentar correctamente):
 
 - `MatConf` que genera una matriz de confunsión, el $R^2$, especificidad, sensibilidad, precisión y AUC
 - `selecModelo` que realiza el proceso de selección de modelos y la elaboración del informe arriba descrito
