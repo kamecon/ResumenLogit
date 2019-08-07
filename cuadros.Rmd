@@ -1,0 +1,74 @@
+---
+title: "Titulo"
+#author: "Kamal Romero"
+date: "Fecha"
+output: 
+  pdf_document:
+    fig_caption: yes
+header-includes:
+- \usepackage{booktabs}
+#classoption: landscape
+#css: test.css
+---
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+```
+
+
+```{r, echo=FALSE}
+kable(modelo_Coef, format = 'latex',  booktabs = T, align = rep('c', 7), caption = "Modelos Logit (3 mejores)") %>% 
+  kable_styling(latex_options = c( "hold_position")) %>% 
+  add_header_above(c(" " = 1, "Modelo 1" = 2, "Modelo 2" = 2, "Modelo 3" = 2)) 
+```
+
+```{r, echo=FALSE}
+kable(modelo_Marg, format = 'latex', booktabs = T, align = rep('c', 7), caption = "Efectos Marginales (3 mejores)") %>% 
+  kable_styling(latex_options = c( "hold_position")) %>% 
+  add_header_above(c(" " = 1, "Modelo 1" = 2, "Modelo 2" = 2, "Modelo 3" = 2)) 
+```
+
+```{r, echo=FALSE}
+kable(Modelo_Eval, format = 'latex', booktabs = T, align = rep('c', 5), caption = "Evaluacion (3 mejores)") %>% 
+  kable_styling(latex_options = c("hold_position")) 
+```
+
+
+\begin{figure}[h]
+\caption{Resultados de la busqueda del modelo}
+\includegraphics{grafglmutl.jpeg}
+\end{figure}
+
+
+
+\begin{figure}[h]
+\caption{Probabilidades relativas. Modelo 1}
+\includegraphics{grafprob1.jpeg}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Probabilidades relativas. Modelo 2}
+\includegraphics{grafprob2.jpeg}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Probabilidades relativas. Modelo 3}
+\includegraphics{grafprob3.jpeg}
+\end{figure}
+
+
+\begin{figure}[h]
+\caption{Efectos Marginales. Modelo 1}
+\includegraphics{grafmarg1.jpeg}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Efectos Marginales. Modelo 2}
+\includegraphics{grafmarg2.jpeg}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Efectos Marginales. Modelo 3}
+\includegraphics{grafmarg3.jpeg}
+\end{figure}
