@@ -3,6 +3,17 @@ pacman::p_load(tidyverse, glmulti, mfx, ROCR, broom, purrr, margins, stringr, sj
 
 
 MatConf <- function(m, d, y){
+  # Crea una matriz de confusión, el R^2, especificidad,
+  # sensibilidad, precisión y AUC, este último con la 
+  # librería ROCR
+  #
+  # Args:
+  #   m: modelo estimado
+  #   d: data frame con los datos del modelo
+  #   y: variable dependiente o target (caracter)
+  # Returns:
+  #   una lista con la matriz de confusión, el R^2,
+  #   especificidad, sensibilidad, precisión y AUC
   
   
   #El tomar 0,5 como límite para determinar la probabilidad de una valoración alta es una decisión estándar pero
@@ -47,6 +58,32 @@ MatConf <- function(m, d, y){
 
 
 selecModelo <-  function(d, y, x, C=TRUE){
+  # La función emplea el paquete glmulti para seleccionar
+  # los 3 mejores modelos logit a partir de una fuente de datos
+  # y genera un documento en formato pdf que resume los 3 modelos
+  # de la siguiente forma:
+  # - Una tabla con los coeficientes y el p-valor de los 3 mejores
+  # modelos obtenidos a través de una búsqueda exhaustiva empleando
+  # el paquete glmulti
+  # - Una tabla con los efectos marginales calculados con el paquete
+  # margins
+  # - Una tabla de evaluación donde se presentan el R2, especificidad,
+  # sensibilidad, precisión y AUC. Los datos se calculan en la función
+  # MatConf, para el cálculo del AUC se utiliza el paquete ROCR
+  # - Dos gráficos del paquete glmulti que presentan la importancia
+  # relativa de las variables y la selección del número de mejores
+  # modelos usando el criterior AIC
+  # - Los gráficos de las probabilidades relativas de los 3 mejores
+  # modelos utilizando el comando plot_modeldel paquete sjPlot
+  # - Los gráficos de los efectos marginales de los 3 mejores modelos
+  #
+  # Args:
+  #   d: data frame con los datos del modelo
+  #   y: variable dependiente o target (caracter)
+  #   x: vector de variables independientes o features (caracter)
+  # Returns:
+  #   Un documento en formato pdf con las tablas y gráficos
+  #   arriba descritos
   
   #Se estiman los modelos
   
