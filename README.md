@@ -14,4 +14,6 @@ Se incluye un script que contiene dos funciones:
 - `MatConf` que genera una matriz de confunsión, el $R^2$, especificidad, sensibilidad, precisión y AUC
 - `selecModelo` que realiza el proceso de selección de modelos y la elaboración del informe arriba descrito
 
+Hay un script con un ejemplo `Ejemplo.R` empleando unos datos de ejemplo del libro de [Wooldridge](https://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge/). Se accede a los datos usando la librería `wooldridge` (para más información consultar el [manual](https://cran.r-project.org/web/packages/wooldridge/wooldridge.pdf)
+
 Asimismo hay un archivo .Rmd para crear el reporte en pdf
