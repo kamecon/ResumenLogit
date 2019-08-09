@@ -123,7 +123,7 @@ selecModelo <-  function(d, y, x, C=TRUE){
     
     set.seed(123)
     
-    modeloBest <- paste("Target ~",
+    modeloBest <- paste(paste0(y,"~"),
                         as.character(glmulti.logistic.out@formulas[[i]][3]))
     
     
@@ -135,7 +135,7 @@ selecModelo <-  function(d, y, x, C=TRUE){
     ifelse(C == FALSE, modeloBest <-  str_replace_all(modeloBest, '.-1 .', ''), modeloBest)
     
     EfectMarg <- logitmfx(modeloBest
-                          , data = encuesta.logit.03,
+                          , data = d,
                           atmean = FALSE)
     
     EfectMarg2 <- margins(modeloLogit)
@@ -174,7 +174,7 @@ selecModelo <-  function(d, y, x, C=TRUE){
     
     #Evaluacion
     
-    evalTemp <- MatConf(modeloLogit, encuesta.logit.03, "Target")
+    evalTemp <- MatConf(modeloLogit, d, y)
     evaluacion[[i]] <-  evalTemp[c(2:6)] %>%
       unlist()
     
