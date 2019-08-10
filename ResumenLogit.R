@@ -50,7 +50,7 @@ MatConf <- function(m, d, y){
   auc.c2 = unlist(auc.c2@y.values)
   
   list(matriz = matriz.confusion, R2 = pseudoR2, especificidad = A1,
-       sensibilidad = A2, precisión = A3, AUC = auc.c2)
+       sensibilidad = A2, precision = A3, AUC = auc.c2)
   
 }
 
