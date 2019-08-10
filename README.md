@@ -1,19 +1,19 @@
 # ResumenLogit
 
-El siguiente c骴igo emplea el paquete `glmulti` para seleccionar los 3 mejores modelos logit a partir de una fuente de datos y genera un documento en formato pdf que resume los 3 modelos de la siguiente forma:
+El siguiente c贸digo emplea el paquete `glmulti` para seleccionar los 3 mejores modelos logit a partir de una fuente de datos y genera un documento en formato pdf que resume los 3 modelos de la siguiente forma:
 
-- Una tabla con los coeficientes y el p-valor de los 3 mejores modelos obtenidos a trav閟 de una b鷖queda exhaustiva empleando el paquete `glmulti`
+- Una tabla con los coeficientes y el p-valor de los 3 mejores modelos obtenidos a trav茅s de una b煤squeda exhaustiva empleando el paquete `glmulti`
 - Una tabla con los efectos marginales calculados con el paquete `margins`
-- Una tabla de evaluaci髇 donde se presentan el $R^2$, especificidad, sensibilidad, precisi髇 y AUC. Los datos se calculan en la funci髇 `MatConf`, para el c醠culo del AUC se utiliza el paquete `ROCR` 
-- Dos gr醘icos del paquete `glmulti` que presentan la importancia relativa de las variables y la selecci髇 del n鷐ero de mejores modelos usando el criterior AIC
-- Los gr醘icos de las probabilidades relativas de los 3 mejores modelos utilizando el comando `plot_model`del paquete `sjPlot`
-- Los gr醘icos de los efectos marginales de los 3 mejores modelos
+- Una tabla de evaluaci贸n donde se presentan el $R^2$, especificidad, sensibilidad, precisi贸n y AUC. Los datos se calculan en la funci贸n `MatConf`, para el c谩lculo del AUC se utiliza el paquete `ROCR` 
+- Dos gr谩ficos del paquete `glmulti` que presentan la importancia relativa de las variables y la selecci贸n del n煤mero de mejores modelos usando el criterior AIC
+- Los gr谩ficos de las probabilidades relativas de los 3 mejores modelos utilizando el comando `plot_model`del paquete `sjPlot`
+- Los gr谩ficos de los efectos marginales de los 3 mejores modelos
 
 Se incluye un script que contiene dos funciones:
 
-- `MatConf` que genera una matriz de confunsi髇, el $R^2$, especificidad, sensibilidad, precisi髇 y AUC
-- `selecModelo` que realiza el proceso de selecci髇 de modelos y la elaboraci髇 del informe arriba descrito
+- `MatConf` que genera una matriz de confunsi贸n, el $R^2$, especificidad, sensibilidad, precisi贸n y AUC
+- `selecModelo` que realiza el proceso de selecci贸n de modelos y la elaboraci贸n del informe arriba descrito
 
-Hay un script con un ejemplo `Ejemplo.R` empleando unos datos de ejemplo del libro de [Wooldridge](https://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge/). Se accede a los datos usando la librer韆 `wooldridge` (para m醩 informaci髇 consultar el [manual](https://cran.r-project.org/web/packages/wooldridge/wooldridge.pdf)
+Hay un script con un ejemplo `Ejemplo.R` empleando unos datos de ejemplo del libro de [Wooldridge](https://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge/). Se accede a los datos usando la librer铆a `wooldridge` (para m谩s informaci贸n consultar el [manual](https://cran.r-project.org/web/packages/wooldridge/wooldridge.pdf))
 
 Asimismo hay un archivo .Rmd para crear el reporte en pdf
